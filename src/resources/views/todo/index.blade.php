@@ -24,12 +24,12 @@
         </div>
       </div>
     </nav>
-    <main class="py-4">
-      <div class="container">
+    @extends('layouts.base')
+    @section('content')
         <div class="row justify-content-center">
           <div class="col-md-8">
             <p class="text-left">
-              <a class="btn btn-success" href="http://localhost:8080/todo/create">ToDoを追加</a>
+              <a class="btn btn-success" href="{{ route('todo.create') }}">ToDoを追加</a>
             </p>
             <div class="card">
               <div class="card-header">
@@ -45,7 +45,6 @@
             </div>
           </div>
         </div>
-     </div>
-    </main>
+      @endsection
   </div>
 </body>
