@@ -14,7 +14,7 @@ class AddSoftdeletesToTodosTable extends Migration
     public function up()
     {
         Schema::table('todos', function (Blueprint $table) {
-            //
+            $table->softDeletes();
         });
     }
 
@@ -26,7 +26,7 @@ class AddSoftdeletesToTodosTable extends Migration
     public function down()
     {
         Schema::table('todos', function (Blueprint $table) {
-            //
+            $table->dropSoftDeletes();
         });
     }
 }
