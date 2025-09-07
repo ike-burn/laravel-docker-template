@@ -49,6 +49,14 @@ class TodoController extends Controller
         return view('todo.edit', ['todo' => $todo]);
     }
 
+    public function update(Request $request, $id)
+    {
+        $inputs = $request->all();  // これで正しいか質問する
 
+        $todo = $this->todo->fill($inputs);  // これで正しいか質問する
+        $todo->save();  // これで正しいか質問する
+        // dd($todo);
 
+        return redirect()->route('todo.show', $todo->id);
+    }
 }
